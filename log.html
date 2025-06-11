@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in to site</title>
+    <link rel="stylesheet" href="log.css">
+    <link rel="icon" type="image/png" href="imagenes/70a6cc15-bc1a-4cca-8461-1ca98e7b1645.png">
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/file-saver@latest/dist/FileSaver.min.js"></script>
+</head>
+<header class="header">
+<div class="menu container">
+    <a href="#" class="logo">
+        <img src="imagenes/70a6cc15-bc1a-4cca-8461-1ca98e7b1645.png" alt="VitaScan Logo" style="height:80px; vertical-align:middle;">
+    </a>
+    <input type="checkbox" id="menu">
+    <label for="menu"><img src="imagenes/menu.png" class="menu-icono" alt=""></label>
+    <nav class="navbar">
+        <ul>
+            <li>
+                <a href="#">Menú</a>
+                <ul class="menu-vertical">
+                    <li><a href="log.html">Log in</a></li>
+                    <li>
+                        <a href="#">Información</a>
+                        <ul class="menu-vertical sub-submenu">
+                            <li><a href="index.html">Página principal</a></li>
+                            <li><a href="Aplicac.html" target="_blank">TransMo App</a></li>
+                            <li><a href="Contacto.html" target="_blank">Contacto</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>       
+    </nav>
+</div>
+<body>
+    <div class="login-container">
+        <h2>Bienvenido/a</h2>
+        <div class="tab">
+            <button id="loginTab" class="active" onclick="showForm('login')">Log In</button>
+            <button id="signupTab" onclick="showForm('signup')">Sign In</button>
+        </div>
+        <form id="loginForm">
+            <input type="text" id="loginUser" placeholder="Usuario" required>
+            <input type="password" id="loginPass" placeholder="Contraseña" required>
+            <button type="submit">Entrar</button>
+            <div id="loginMsg" class="msg"></div>
+        </form>
+        <form id="signupForm" style="display:none;">
+            <input type="text" id="signupUser" placeholder="Usuario" required>
+            <input type="email" id="signupEmail" placeholder="Correo electrónico" required>
+            <input type="password" id="signupPass" placeholder="Contraseña" required>
+            <button type="submit">Registrarse</button>
+            <div id="signupMsg" class="msg"></div>
+        </form>
+        <button type="button" onclick="exportUsersToExcel()" style="margin-top:20px;">Exportar usuarios a Excel</button>
+    </div>
+    
+    <script>
+        function showForm(form) {
+            document.getElementById('loginForm').style.display = form === 'login' ? 'block' : 'none';
+            document.getElementById('signupForm').style.display = form === 'signup' ? 'block' : 'none';
+            document.getElementById('loginTab').classList.toggle('active', form === 'login');
+            document.getElementById('signupTab').classList.toggle('active', form === 'signup');
+        }
+
+        // Guardar y obtener usuarios de localStorage
+        function getUsers() {
+            return JSON.parse(localStorage.getItem('users') || '[]');
+        }
+        function saveUsers(users) {
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+
+        // Registro
+        document.getElementById('signupForm').onsubmit = function(e) {
+            e.preventDefault();
+            const user = document.getElementById('signupUser').value.trim();
+            const email = document.getElementById('signupEmail').value.trim();
+            const pass = document.getElementById('signupPass').value;
+            const msg = document.getElementById('signupMsg');
+            let users = getUsers();
+            if (users.find(u => u.user === user)) {
+                msg.textContent = "El usuario ya existe.";
+                msg.style.color = "red";
+                return;
+            }
+            users.push({ user, email, pass });
+            saveUsers(users);
+            msg.textContent = "Registro exitoso. Ahora puedes iniciar sesión.";
+            msg.style.color = "green";
+            document.getElementById('signupForm').reset();
+        };
+
+        // Login
+        document.getElementById('loginForm').onsubmit = function(e) {
+            e.preventDefault();
+            const user = document.getElementById('loginUser').value.trim();
+            const pass = document.getElementById('loginPass').value;
+            const msg = document.getElementById('loginMsg');
+            let users = getUsers();
+            const found = users.find(u => u.user === user && u.pass === pass);
+            if (found) {
+                msg.textContent = "Acceso concedido.";
+                msg.style.color = "green";
+                // Guardar usuario actual en localStorage
+                localStorage.setItem('currentUser', user);
+                setTimeout(function() {
+                    window.location.href = "data.html";
+                }, 1000); // Espera 1 segundo antes de redirigir
+            } else {
+                msg.textContent = "Usuario o contraseña incorrectos.";
+                msg.style.color = "red";
+            }
+        };
+
+        // Exportar usuarios a Excel
+        function exportUsersToExcel() {
+            const users = getUsers();
+            if (users.length === 0) {
+                alert("No hay usuarios registrados para exportar.");
+                return;
+            }
+            // Encabezados
+            const headers = ["Usuario", "Correo electrónico", "Contraseña"];
+            // Datos
+            const data = users.map(u => [u.user, u.email, u.pass]);
+            // Unir encabezados y datos
+            const dataForSheet = [headers, ...data];
+            // Crear libro y hoja
+            const workbook = XLSX.utils.book_new();
+            const worksheet = XLSX.utils.aoa_to_sheet(dataForSheet);
+            XLSX.utils.book_append_sheet(workbook, worksheet, "Usuarios");
+            const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+            try {
+                saveAs(new Blob([excelBuffer], { type: "application/octet-stream" }), "usuarios.xlsx");
+            } catch (e) {
+                console.error("Error al guardar el archivo:", e);
+                alert("Hubo un error al intentar guardar el archivo Excel.");
+            }
+            alert('¡Usuarios exportados a usuarios.xlsx!');
+        }
+
+        // --- INTEGRACIÓN DEL CÓDIGO DE XML/XSLT ---
+        function loadXMLDoc(filename) {
+            let xhttp = new XMLHttpRequest();
+            xhttp.open("GET", filename, false);
+            xhttp.send();
+            return xhttp.responseXML;
+        }
+
+        window.onload = function() {
+            // Si estamos en log.html, no ejecutar el código de XML/XSLT
+            if (window.location.pathname.endsWith("log.html")) {
+                return;
+            }
+            // Obtén el usuario actual
+            const user = localStorage.getItem('currentUser');
+            if (!user) {
+                alert("No has iniciado sesión.");
+                window.location.href = "log.html";
+                return;
+            }
+        }
+    </script>
+</body>

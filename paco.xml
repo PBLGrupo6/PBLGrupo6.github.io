@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="Analisis_de_pacientes.xslt"?>
+<Resultados_de_los_pacientes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Analisis_de_pacientes.xsd">
+    <Paciente id="3">
+        <Identificacion>
+            <Nombre>Paco</Nombre>
+            <Apellido1>Etxeberria</Apellido1>
+            <Apellido2>Adewale</Apellido2>
+            <Edad>112</Edad>
+            <Genero>Masculino</Genero> 
+            <Bloodtype>0-</Bloodtype>
+        </Identificacion>
+        <Centro_sanitario>Hospital Militar Principal de Luanda</Centro_sanitario>
+        <Resultados>
+            <Diagnostico>Positivo en Malaria</Diagnostico>
+            <Especie_plasmodium>P. Falciparum</Especie_plasmodium>
+            <numero_parasito>9999999</numero_parasito>
+            <Severidad>Grave</Severidad>
+        </Resultados>
+        <Procesamiento>
+            <Imagen>imagenes/20190723_182432.jpg</Imagen>
+            <Muestra>Frotis fino</Muestra>
+            <Tinción>Giemsa</Tinción>
+            <Fecha_de_diagnostico>2025-05-05</Fecha_de_diagnostico>
+            <Modelo>Modelo de Machine Learning v1.0</Modelo>
+            <Nivel_de_Confianza>Media</Nivel_de_Confianza>
+        </Procesamiento>   
+    </Paciente>
+</Resultados_de_los_pacientes>

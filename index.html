@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitaScan</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="imagenes/70a6cc15-bc1a-4cca-8461-1ca98e7b1645.png">
+</head>
+<body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+        threshold: 0.2
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('visible');
+            appearOnScroll.unobserve(entry.target);
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+});
+</script>
+
+<header class="header">
+<div class="menu container">
+    <a href="#" class="logo">
+        <img src="imagenes/70a6cc15-bc1a-4cca-8461-1ca98e7b1645.png" alt="VitaScan Logo" style="height:80px; vertical-align:middle;">
+    </a>
+    <input type="checkbox" id="menu">
+    <label for="menu"><img src="imagenes/menu.png" class="menu-icono" alt=""></label>
+    <nav class="navbar">
+        <ul>
+            <li>
+                <a href="#">Menú</a>
+                <ul class="menu-vertical">
+                    <li><a href="log.html" target="_blank">Log in</a></li>
+                    <li>
+                        <a href="#">Información</a>
+                        <ul class="menu-vertical sub-submenu">
+                            <li><a href="#que-es">Página principal</a></li>
+                            <li><a href="Aplicac.html">TransMo App</a></li>
+                            <li><a href="Contacto.html">Contacto</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>       
+    </nav>
+</div>
+<div class="header-content container" id="header-content">
+    <div class="header-info">
+        <div class="header-title-box">
+            <h1>Diagnóstico accesible para todos</h1>
+            <p>Innovación contra la malaria en zonas vulnerables</p>
+            <a href="#que-es" class="btn-1">Más información</a>
+        </div>
+    </div>
+</div>
+</header>
+
+
+<section class="gym container" id="que-es">
+    <div class="gym-1">
+        <h2>¿Qué es la malaria?</h2>
+        <p>
+            La malaria es una enfermedad infecciosa transmitida por mosquitos del género Anopheles , que actúan como vectores del parásito Plasmodium . Este parásito, al ingresar al torrente sanguíneo a través de la picadura de un mosquito infectado, inicia un ciclo complejo dentro del cuerpo humano. Los esporozoítos, formas infectivas del parásito, migran primero al hígado donde se multiplican antes de invadir los glóbulos rojos, causando su ruptura masiva y desencadenando síntomas característicos como fiebre intermitente, escalofríos, cefalea, mialgia y fatiga generalizada.           
+        </p>
+    </div>
+    <div class="gym-2">
+        <img class="img-1 fade-in" src="imagenes/lamalaria-distribucion-geografica-enfermedad-mundo.jpg" alt="malaria map">
+        <img class="img-2 fade-in" src="imagenes/mosquito-malaria.png" alt="mosquito">
+    </div>
+</section>
+
+
+<section class="gym container" id="quienes-somos">
+    <div class="gym-2">
+        <img class="img-1 fade-in" src="imagenes/istockphoto-1346675527-612x612.jpg" alt="startup team">
+        <img class="img-2 fade-in" src="imagenes/istockphoto-949947192-612x612.jpg" alt="tech lab">
+    </div>
+    <div class="gym-1">
+        <h2>Quiénes somos</h2>
+        <p>
+            En VitaScan, somos una start-up comprometida con la salud global y la lucha contra enfermedades como la malaria, que afecta desproporcionadamente a comunidades vulnerables. Nuestro objetivo es desarrollar una herramienta de diagnóstico automatizado basada en inteligencia artificial, diseñada para ser accesible y efectiva en regiones con recursos limitados. Apostamos por la innovación, la equidad y la sostenibilidad para transformar el acceso al diagnóstico en las áreas más afectadas por esta enfermedad. Con esta solución, buscamos reducir la mortalidad asociada a la malaria y marcar una diferencia duradera en la vida de millones de personas.
+        </p>
+    </div>
+</section>
+
+
+<section class="gym container" id="impacto">
+    <div class="gym-1">
+        <h2>Camino al impacto</h2>
+        <p>
+            Actualmente, estamos inmersos en la validación de nuestra solución en entornos reales, trabajando en colaboración con comunidades y sistemas de salud locales para garantizar su efectividad y adaptabilidad. Nuestro objetivo es lanzar un piloto en zonas endémicas para 2025, priorizando regiones donde el acceso al diagnóstico sigue siendo un desafío crítico. Nuestra tecnología no solo tiene el potencial de reducir el coste del diagnóstico en un 30%, sino que también ofrece resultados precisos en menos de 2 minutos, lo que marca un antes y un después en la lucha contra la malaria. Con el apoyo estratégico de socios clave, aspiramos a tener nuestro sistema plenamente operativo en el terreno en menos de 18 meses, llevando innovación y esperanza a las comunidades más vulnerables.
+        </p>
+    </div>
+    <div class="gym-2">
+        <img class="img-1 fade-in" src="imagenes/20241021-EntregaFiltrosComunitatios-CrecerSano-Guatemala.webp" alt="malaria cell">
+        <img class="img-2 fade-in" src="imagenes/tecnologia-moderna-diagnostico-medico-salud-inteligencia-artificial-ayuda-analizar-datos-sobre-pacientes-salud_1036975-71728.avif" alt="diagnosis">
+    </div>
+</section>
+
+
+<footer class="footer container" id="contacto">
+    <h3>VitaScan</h3>
+    <div class="links">
+        <ul>
+            <li><a href="#header-content">Inicio</a></li>
+            <li><a href="#que-es">Información</a></li>
+            <li><a href="Contacto.html" target="_blank">Contacto</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>

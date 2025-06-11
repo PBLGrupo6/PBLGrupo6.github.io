@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Resultados_de_los_pacientes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Paciente" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Identificacion">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Nombre" type="xs:string"/>
+                                        <xs:element name="Apellido1" type="xs:string"/>
+                                        <xs:element name="Apellido2" type="xs:string"/>
+                                        <xs:element name="Edad" type="xs:integer"/>
+                                        <xs:element name="Genero" type="xs:string"/>
+                                        <xs:element name="Bloodtype" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Centro_sanitario" type="xs:string"/>
+                            <xs:element name="Resultados">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Diagnostico" type="xs:string"/>
+                                        <xs:element name="Especie_plasmodium" type="xs:string"/>
+                                        <xs:element name="numero_parasito" type="xs:integer"/>
+                                        <xs:element name="Severidad" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Procesamiento">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Imagen" type="xs:string"/>
+                                        <xs:element name="Muestra" type="xs:string"/>
+                                        <xs:element name="Tinción" type="xs:string"/>
+                                        <xs:element name="Fecha_de_diagnostico" type="xs:string"/>
+                                        <xs:element name="Modelo" type="xs:string"/>
+                                        <xs:element name="Nivel_de_Confianza" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:integer" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

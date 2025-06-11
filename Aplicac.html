@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransMo App</title>
+    <link rel="stylesheet" href="Aplicac.css">
+    <link rel="icon" type="image/png" href="imagenes/70a6cc15-bc1a-4cca-8461-1ca98e7b1645.png">
+</head>
+<body>
+<header class="header">
+    <div class="menu container">
+        <a href="#" class="logo">
+            <img src="imagenes/70a6cc15-bc1a-4cca-8461-1ca98e7b1645.png" alt="VitaScan Logo" style="height:80px; vertical-align:middle;">
+        </a>
+        <input type="checkbox" id="menu">
+        <label for="menu"><img src="imagenes/menu.png" class="menu-icono" alt=""></label>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="#">Menú</a>
+                    <ul class="menu-vertical">
+                        <li><a href="log.html" target="_blank">Log in</a></li>
+                        <li>
+                            <a href="#">Información</a>
+                            <ul class="menu-vertical sub-submenu">
+                                <li><a href="index.html">Página principal</a></li>
+                                <li><a href="Aplicac.html">TransMo App</a></li>
+                                <li><a href="Contacto.html">Contacto</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>       
+        </nav>
+    </div>
+    <div class="header-content container">
+        <div class="header-info">
+            <div class="header-title-box">
+                <h1>TransMo App</h1>
+                <p>La aplicación móvil para el diagnóstico rápido y accesible de la malaria.</p>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="gym container">
+    <h2 class="section-subtitle">Instrucciones de uso</h2>
+    <div class="gym-1">
+        <p style="color:#ff5252; font-weight:bold; text-align:center; margin-bottom:24px;">
+            LEA CUIDADOSAMENTE Y CONSÉRVELO PARA FUTURAS CONSULTAS. EL  SOFTWARE PARA DIAGNOSTICO DE MALARIA TransMo APP ES UN PRODUCTO  SANITARIO Y SIEMPRE DEBE SER UTILIZADO POR UN PROFESIONAL MÉDICO. SIGA  SIEMPRE LAS INSTRUCCIONES INCLUIDAS EN ESTE FOLLETO Y RECUERDE QUE  SIRVE PARA AYUDAR AL DIAGNÓSTICO.         
+        </p>
+        <h3>1. DESCRIPCIÓN DEL PRODUCTO y FINALIDAD PREVISTA:</h3>
+        <p>El software TransMo App® ha sido diseñado como una solución de apoyo para el diagnóstico in vitro de la malaria, mediante el análisis digital automatizado de imágenes de frotis sanguíneo teñido con Giemsa.</p>
+        <p>La aplicación tiene una función diagnóstica y ofrece información específica sobre un estado patológico. Su finalidad prevista es detectar la presencia o ausencia de parásitos del género Plasmodium spp., responsables de la infección por malaria, mediante análisis automatizado con inteligencia artificial. Este análisis se realiza in vitro, lo que sitúa al software dentro del marco de productos sanitarios para diagnóstico in vitro. La aplicación tiene una función diagnóstica y ofrece información específica sobre un estado patológico. El análisis se basa en imágenes de frotis grueso, y es de tipo cualitativo, ya que determina si hay o no parásitos en la muestra.</p> 
+        <p>TransMo App® está destinado exclusivamente al uso por parte de profesionales sanitarios,  especialmente técnicos de laboratorio capacitados para preparar muestras de sangre y capturar imágenes microscópicas, así como médicos y personal de atención primaria que utilizarán la aplicación como herramienta de apoyo en el diagnóstico clínico. No está diseñado para el autodiagnóstico ni para el uso por parte del público general. El uso del software no requiere entornos especiales ni formación específica más allá de la cualificación habitual en microscopía diagnóstica y práctica clínica.</p>
+        
+        <h3>2. ESPECIFICACIONES TÉCNICAS:</h3>
+        <p>En cuanto a su funcionamiento clínico, el software realiza un análisis automatizado de las imágenes microscópicas para detectar estructuras celulares que podrían corresponder a parásitos.</p>  
+        <p>Para garantizar el funcionamiento adecuado de  TransMo App® y obtener  resultados diagnósticos fiables, es necesario cumplir ciertos requisitos técnicos respecto al instrumental utilizado con la aplicación. Este apartado incluye las características del equipo informático necesario para ejecutar la aplicación, así como las condiciones y requisitos relacionados con la obtención de las imágenes microscópicas utilizadas para el análisis.  Los siguientes materiales son necesarios, pero no son suministrados por el fabricante.</p>
+        <h4>2.1. Especificaciones técnicas del ordenador</h4>
+        <p>
+            En primer lugar, la aplicación debe ejecutarse en un ordenador con especificaciones mínimas que aseguren un rendimiento fluido, incluyendo:
+        </p>
+        <ol>
+            <li>Un procesador de al menos 2 GHz y 4 GB de memoria RAM</li>
+            <li>El software está diseñado para funcionar en sistemas operativos Windows, siendo compatible tanto con versiones actuales como anteriores.</li>
+            <li>En cuanto a los requerimientos de almacenamiento,  TransMo App® ocupa como máximo 8 GB de espacio en disco.</li>
+            <li>La aplicación ha sido implementada principalmente en Matlab, especialmente en lo relativo a los módulos de evaluación de imágenes y segmentación automatizada.</li>
+        </ol>
+        <h4>2.2  Especificaciones técnicas de la obtención de la imagen</h4>
+        <p>
+            Dado que la imagen introducida en TransMo App® es el elemento central del proceso diagnóstico, la cámara utilizada debe cumplir con las siguientes especificaciones:
+        </p>
+        <ol>
+            <li>Una resolución mínima de al menos 12 megapíxeles, para garantizar la nitidez y el nivel de detalle requerido.</li>
+            <li>Debe contar con enfoque automático preciso; se recomienda posibilidad de ajuste manual del enfoque para evitar desenfoques por movimientos o mala alineación.</li>
+            <li>Es necesario el uso de un adaptador óptico universal que permita alinear correctamente la lente del móvil con el ocular del microscopio.</li>
+            <li>La imagen debe tomarse con iluminación estable, proporcionada por el microscopio, sin uso de flash.</li>
+            <li>Se recomienda guardar las imágenes en formato JPEG.</li>
+        </ol>
+        <h4>2.3  Especificaciones técnicas del microscopio</h4>
+        <p>Además, se describen los aspectos técnicos relacionados con la preparación de la muestra, los cuales son fundamentales debido a que el modelo de inteligencia artificial ha sido entrenado con imágenes que cumplen unas condiciones muy concretas. La calidad y las propiedades ópticas de la imagen son determinantes para lograr un diagnóstico fiable. Por tanto, para que la aplicación funcione correctamente y se garantice la precisión del diagnóstico, la imagen introducida en TransMo App® debe presentar ciertas características estandarizadas.</p>
+        <p>Es necesario que la muestra de sangre esté preparada mediante frotis grueso y teñida con coloración de Giemsa, siguiendo protocolos microscópicos convencionales. Respecto a las condiciones del microscopio,  se requiere que cumpla con los siguientes criterios:</p>
+        <ol>
+            <li>Microscopio óptico de campo claro, preferiblemente binocular para facilitar el enfoque prolongado.</li>
+            <li>Debe contar con lentes objetivas de 10x, 40x y 100x, siendo este último un objetivo de inmersión en aceite, necesario para alcanzar los 1000 aumentos requeridos para visualizar los parásitos con detalle morfológico suficiente.</li>
+            <li>Fuente de luz ajustable, preferentemente LED o halógena, que proporcione una iluminación uniforme y sin parpadeo.</li>
+        </ol>
+        <h3>3. BENEFICIOS CLÍNICOS:</h3>
+        <p>
+            El modelo ha sido entrenado con un gran conjunto de datos etiquetados, lo que le permite reconocer patrones morfológicos característicos de Plasmodium spp.. Gracias a este entrenamiento, el sistema es capaz de diferenciar entre estructuras que son parásitos y aquellas que no lo son, emitiendo un resultado diagnóstico basado en esa identificación. En la siguiente tabla se representa el rendimiento comprobado en validaciones internas.  
+        </p>
+        <table border="1" cellspacing="0" cellpadding="8">
+    <tr>
+        <th>Rendimiento diagnóstico del sistema</th>
+        <th>Definición</th>
+        <th>Clase de estructura que detecta el modelo</th>
+        <th>Valor</th>
+    </tr>
+    <tr>
+        <td rowspan="3">Especificidad</td>
+        <td rowspan="3">Mide la capacidad del modelo para identificar correctamente los negativos reales.</td>
+        <td>Parásito</td>
+        <td>0,93</td>
+    </tr>
+    <tr>
+        <td>Ruido</td>
+        <td>0,86</td>
+    </tr>
+    <tr>
+        <td>Leucocitos</td>
+        <td>0,98</td>
+    </tr>
+    <tr>
+        <td rowspan="3">Precisión</td>
+        <td rowspan="3">Mide la proporción de positivos predichos que realmente son positivos</td>
+        <td>Parásito</td>
+        <td>0,75</td>
+    </tr>
+    <tr>
+        <td>Ruido</td>
+        <td>0,88</td>
+    </tr>
+    <tr>
+        <td>Leucocitos</td>
+        <td>0,95</td>
+    </tr>
+    <tr>
+        <td>Precisión global</td>
+        <td>Mide la proporción total de predicciones correctas sobre todas las predicciones realizadas.</td>
+        <td>Es una medida global del rendimiento del modelo.</td>
+        <td>0,88</td>
+    </tr>
+</table>
+        <p>TransMo App® proporciona soporte objetivo a médicos y personal sanitario de primera línea, sirviendo como herramienta de ayuda al diagnóstico que refuerza la toma de decisiones clínicas, incluso cuando la experiencia específica en malaria es limitada.</p>  
+        <p>Además, la automatización del análisis permite obtener resultados más rápidamente que con la revisión manual, lo que facilita un inicio más temprano del tratamiento y mejora el pronóstico del paciente.</p>
+        <h3>4. INDICACIONES Y CONTRAINDICACIONES:</h3>
+        <p>
+            TransMo App® está indicado para su uso como herramienta de apoyo al diagnóstico de malaria, mediante el análisis automatizado de imágenes digitales de frotis sanguíneo teñido con Giemsa . Su uso está orientado a: 
+        </p>
+        <ol>
+            <li>El análisis de imágenes de frotis grueso de sangre periférica teñidas con Giemsa, ya que este tipo de muestra es compatible con los datos utilizados durante el entrenamiento del modelo de inteligencia artificial.</li>
+            <li>Profesionales de la salud en centros donde es posible la obtención de una imagen de microscopio de sangre de frotis gruesa. </li>
+            <li>Situaciones donde se requiera una opinión diagnóstica rápida, especialmente en áreas endémicas o con baja disponibilidad de microscopistas expertos.</li>
+            <li>Apoyo en la detección temprana de casos sospechosos de infección por Plasmodium spp.</li>
+        </ol>
+        <p>
+            El uso del producto está limitado a ciertas condiciones técnicas y profesionales. A continuación, se detallan los casos en los que no se recomienda su utilización:
+        </p>
+        <ol>
+            <li>Para autodiagnóstico o uso por personas sin formación sanitaria. El software no está diseñado para ser operado por usuarios no profesionales.</li>
+            <li>No se recomienda su uso con imágenes que no provengan de frotis gruesos teñidos con Giemsa, ya que el rendimiento del modelo podría verse comprometido. </li>
+            <li>De la misma manera, no se permite el uso de imágenes borrosas, mal iluminadas, o tomadas con microscopios que no cumplen con los requisitos mínimos, pues pueden dar lugar a un diagnóstico erróneo.</li>
+            <li>TransMo App® no reemplaza la evaluación médica integral ni otras pruebas complementarias necesarias para confirmar el diagnóstico y establecer el tratamiento.</li>
+        </ol>
+        <h3>5. ADVERTENCIAS Y PRECAUCIONES:</h3>
+        <p>
+            Antes de utilizar TransMo App®, es fundamental tener en cuenta una serie de advertencias y precauciones que garantizan su correcto funcionamiento y la fiabilidad del diagnóstico.
+        </p>
+        <ol>
+            <li>Este software está destinado a proporcionar apoyo en el diagnóstico de malaria. No sustituye el juicio clínico profesional. El resultado generado por el software debe interpretarse junto con otras evidencias clínicas y no constituye por sí solo un diagnóstico definitivo.</li>
+            <li>Todos los resultados obtenidos deben ser revisados y validados por un médico antes de iniciar cualquier tratamiento.</li>
+            <li>Los resultados dependen de la calidad de las imágenes introducidas. No se garantiza la precisión en caso de imágenes borrosas, incompletas o fuera de foco.</li>
+            <li>Un uso inapropiado del software puede derivar en errores de diagnóstico que comprometan la salud del paciente.</li>
+        </ol>
+        <h3>6. INDICACIONES ANTES DE USO:</h3>
+        <p>Para garantizar que las imágenes introducidas en TransMo App® mantengan la calidad necesaria para un análisis fiable, es fundamental seguir un procedimiento estandarizado durante su captura.</p> 
+        <p>En primer lugar, se debe preparar previamente el frotis grueso según los protocolos establecidos, asegurando una adecuada extensión, fijación y tinción Giemsa. </p>
+        <p>A continuación, se enciende el microscopio y se ajusta la iluminación para obtener una visualización clara, sin reflejos ni sombras. Se selecciona el objetivo adecuado, siendo preferente el de 100x con inmersión en aceite, y se enfoca la muestra directamente a través del ocular, garantizando la nitidez de las estructuras relevantes.</p>
+        <p>Una vez enfocado, se coloca el adaptador óptico en el ocular del microscopio y se acopla el dispositivo móvil, procurando que la lente de la cámara trasera quede perfectamente alineada con el ocular. </p>
+        <p>Se abre la aplicación de cámara del dispositivo móvil, se desactiva el flash y se selecciona la resolución máxima disponible. Se ajusta el enfoque tocando la pantalla sobre el área de interés, y, si es necesario, se corrige manualmente la exposición para asegurar una imagen bien iluminada.</p>
+        <p>Después de verificar que la imagen está correctamente enfocada y encuadrada, se procede a capturarla manteniendo estable tanto el móvil como el microscopio. La imagen debe guardarse en formato JPEG. Por último, debe comprobarse que la imagen obtenida cumple con los criterios de nitidez, iluminación y centrado antes de introducirla en la aplicación. </p>
+        <p>
+            <span style="background-color: #fe0000; color: #000000; padding: 2px 6px; border-radius: 4px; font-weight: bold;">
+                En caso contrario, debe repetirse el proceso.
+            </span>
+        </p>
+        <h3>7. INSTALACIÓN:</h3>
+        <p>Para asegurar el funcionamiento óptimo del software, se recomienda que el ordenador en el que se va a descargar y ejecutar cumpla con los requisitos mencionados en el punto 2.1.</p>
+        <h4>7.1 Proceso de descarga</h4>
+        <p>Una vez realizada la compra del producto, este se vincula a la cuenta de Gmail del cliente, a quien se le facilitarán un usuario y una contraseña. Además, se le otorga la opción de generar varias cuentas secundarias, según el número solicitado, para permitir el acceso simultáneo por parte de varios miembros de la misma organización.</p>
+        <p>	Para descargar la aplicación, es necesario acceder a Google Drive y utilizar el buscador interno introduciendo el siguiente término: TransMo App® Software.Al hacer clic en la opción de descarga, el archivo se guardará automáticamente en la carpeta de descargas del equipo. Se recomienda mover el archivo a una carpeta nueva y exclusiva que contenga únicamente los elementos relacionados con el software. </p>
+        <h4>7.2 Ejecución inicial</h4>
+        <p>Para iniciar el programa por primera vez, se debe localizar el archivo descargado. Esto puede hacerse mediante el buscador del sistema operativo o navegando manualmente hasta la carpeta donde fue almacenado. Una vez encontrado, basta con hacer doble clic sobre el archivo para lanzar la aplicación. Al abrirse, se mostrará directamente la interfaz de acceso con el formulario de inicio de sesión.</p>
+        <h4>7.3 Ejecuciones posteriores</h4>
+        <p>Para iniciar la aplicación en futuras ocasiones, se podrá acceder directamente desde la carpeta donde se encuentra el archivo o buscarlo mediante el explorador del sistema. Una vez localizado, bastará con hacer doble clic sobre el ejecutable para abrir nuevamente la pantalla de inicio de sesión y comenzar el uso habitual del software.</p>
+        <h3>8. MODO DE EMPLEO:</h3>
+        <p>En este apartado, se explican las diferentes pantallas de la aplicación y cómo utilizarlas. Se han añadido imágenes para acompañar a la explicación.</p>
+        <h4>8.1 Página principal</h4>
+        <p>En esta primera pantalla, como se puede observar existen diferentes opciones. Por una parte, está la opción de iniciar sesión, introduciendo el nombre de usuario y contraseña. Si es la primera vez que se accede a la aplicación es necesario registrarse primero, pulsando el botón de registrarse, para crear un usuario nuevo.</p>
+        <figure>
+            <img class="img-1" src="imagenes_instruciones/fotoapp2.JPG" alt="Pantalla de inicio de sesión">
+            <figcaption style="text-align:center; font-size:0.95em; color:#555;">
+            Pantalla de inicio de sesión de TransMo App®.
+            </figcaption>
+        </figure>
+        <p>Por último, el botón de página web contiene un link que redirige al usuario a la misma.</p>
+        <h4>8.2 Página de resultado</h4>
+        <p>En segundo lugar, pulsando el botón de segmentación, se procesa la imagen; así se obtiene la imagen de la derecha. Cómo se aprecia en la figura, las estructuras de la imagen son marcadas en la imagen procesada. Además, se obtiene el resultado: si determina que el paciente tiene malaria, aparecerá un “Sí” al lado de la palabra “Malaria".  En este caso, también se identifica la especie, que en el caso de la figura, es “vivax”. En el caso de que sea la otra especie, aparecerá la palabra “falciparum”.</p>
+        <figure>
+            <img class="img-1" src="imagenes_instruciones/appmalaria.JPG" alt="Pantalla de resultados">
+            <figcaption style="text-align:center; font-size:0.95em; color:#555;">
+            Pantalla de resultados de TransMo App®.
+            </figcaption>
+        </figure>
+        <p>Si el paciente no tiene malaria, aparecerá solamente la palabra “ No” al lado de “Malaria”.</p>
+        <h3>9. PUBLICACIÓN Y REVISIÓN DE LAS INSTRUCCIONES:</h3>
+        <p>Las instrucciones del software TransMo App® para detección de malaria han sido publicadas el 5 de junio de 2025 y la fecha de revisión de las mismas el 12 de marzo de 2025.</p>
+        <p>En la etiqueta pueden aparecer los siguientes símbolos:</p>
+        <table>
+            <tr>
+                <th>Símbolo</th>
+                <th>Significado</th>
+            </tr>
+            <tr>
+                <td><img src="imagenes_instruciones/Fabricante.png" alt="Fabricante" style="height:64px;"></td>
+                <td>Fabricante</td>
+                
+            </tr>
+            <tr>
+                <td><img src="imagenes_instruciones/Fecha de fabricación.jpg" alt="FdF" style="height:64px;"></td>
+                <td>Fecha de Fabricación</td>
+                
+            </tr>
+            <tr>
+                <td><img src="imagenes_instruciones/Producto sanitario.png" alt="MD" style="height:64px;"></td>
+                <td>Producto Sanitario</td>
+                
+            </tr>
+            <tr>
+                <td><img src="imagenes_instruciones/Producto sanitario in vitro.png"alt="Producto Sanitario In Vitro" style="height:64px;"></td>
+                <td>Producto Sanitario In Vitro</td>
+                
+            </tr>
+            <tr>
+                <td><img src="imagenes_instruciones/UDI.png"alt="UDI" style="height:64px;"></td>
+                <td>UDI</td>
+                
+            </tr>
+            <tr>
+                <td><img src="imagenes_instruciones/Advertencia.svg"alt="Advertencias" style="height:64px;"></td>
+                <td>Advertencias</td>
+                
+            </tr>
+            <tr>
+                <td><img src="imagenes_instruciones/Sitio web para pacientes.jpeg"alt="Sitio web de información para pacientes" style="height:64px;"></td>
+                <td>Sitio web de información para pacientes</td>
+                
+            </tr>
+            <tr>
+                <td><img src="imagenes_instruciones/Instrucciones.png"alt="Enlace a las instrucciones" style="height:64px;"></td>
+                <td>Enlace a las instrucciones</td>
+            </tr>
+        </table>
+    </div>
+    <div class="gym-2">
+        <h2 class="img-title">Etiqueta del producto</h2>
+        <img class="img-1" src="imagenes_instruciones/ETIQUETA_TRANSMOAPP.jpg" alt="Etiqueta del producto">
+    </div>
+</section>
+
+<footer class="footer container">
+    <h3>VitaScan</h3>
+    <div class="links">
+        <ul>
+            <li><a href="#header-content">Inicio</a></li>
+            <li><a href="inversion.html">Información</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,12 @@
+CONTENIDOS
+-imágenes: imágenes empleadas en las pestañas "Principal", "Log in" y "Contactos"
+-imágenes_instrucciones: imágenes empleadas en la pestaña de instrucciones
+-ana.xml, paco.xml y juan.xml: Archivos con los resultados de los pacientes.
+-Analisis_de_pacientes.xsd: Schema para la validación de los XML.
+-Analisis_de_pacientes.xslt: Estructura de la tabla en la que se presentan los datos de los pacientes con css incorporado
+-Aplicac.html y .css: Pestaña con las instrucciones y etiqueta de TransMo App y su formato.
+-contacto.html y .css: Pestaña con el teléfono, dirección de correo y dirección de la start up.
+-data.html y .css: Pestaña donde se abren los archivos XML
+-index.html y .css: Pestaña principal
+-log.html: Pestaña para registro e inicio de sesión.
+-usuarios.xlsx: Archivo con los usuarios registrados y sus contraseñas

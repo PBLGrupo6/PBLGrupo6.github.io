@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="Analisis_de_pacientes.xslt"?>
+<Resultados_de_los_pacientes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Analisis_de_pacientes.xsd">
+    <Paciente id="2">
+        <Identificacion>
+            <Nombre>Ana</Nombre>
+            <Apellido1>Castillo</Apellido1>
+            <Apellido2>Villa</Apellido2>
+            <Edad>37</Edad>
+            <Genero>Femenino</Genero> 
+            <Bloodtype>A-</Bloodtype>
+        </Identificacion>
+        <Centro_sanitario>Hospital Militar Principal de Luanda</Centro_sanitario>
+        <Resultados>
+            <Diagnostico>Negativo en Malaria</Diagnostico>
+            <Especie_plasmodium>None</Especie_plasmodium>
+            <numero_parasito>0</numero_parasito>
+            <Severidad>None</Severidad>
+        </Resultados>
+        <Procesamiento>
+            <Imagen>imagenes/20170901_031213.jpg</Imagen>
+            <Muestra>Frotis fino</Muestra>
+            <Tinción>Giemsa</Tinción>
+            <Fecha_de_diagnostico>2025-05-05</Fecha_de_diagnostico>
+            <Modelo>Modelo de Machine Learning v1.0</Modelo>
+            <Nivel_de_Confianza>Alta</Nivel_de_Confianza>
+        </Procesamiento>   
+    </Paciente>
+</Resultados_de_los_pacientes>

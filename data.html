@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del paciente</title>
+    <link rel="stylesheet" href="data.css">
+    <link rel="icon" type="image/png" href="imagenes/70a6cc15-bc1a-4cca-8461-1ca98e7b1645.png">
+</head>
+
+<body>
+    <header class="header">
+        <div class="menu container">
+            <a href="#" class="logo">
+                <img src="imagenes/70a6cc15-bc1a-4cca-8461-1ca98e7b1645.png" alt="VitaScan Logo" style="height:80px; vertical-align:middle;">
+            </a>
+            <input type="checkbox" id="menu">
+            <label for="menu"><img src="imagenes/menu.png" class="menu-icono" alt=""></label>
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <a href="#">Menú</a>
+                        <ul class="menu-vertical">
+                            <li><a href="log.html" target="_blank">Log in</a></li>
+                            <li>
+                                <a href="#">Información</a>
+                                <ul class="menu-vertical sub-submenu">
+                                    <li><a href="index.html">Página principal</a></li>
+                                    <li><a href="Aplicac.html">TransMo App</a></li>
+                                    <li><a href="Contacto.html">Contacto</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>       
+            </nav>
+        </div>
+    </header>
+    <div id="tabla"></div>
+
+    <script>
+    function loadXMLDoc(filename) {
+        let xhttp = new XMLHttpRequest();
+        xhttp.open("GET", filename, false);
+        xhttp.send();
+        return xhttp.responseXML;
+    }
+
+    window.onload = function() {
+        // Verifica si el usuario ha iniciado sesión
+        const user = localStorage.getItem('currentUser');
+        if (!user) {
+            alert("No has iniciado sesión.");
+            window.location.href = "log.html";
+            return;
+        }
+        // Determina si el usuario es administrador
+        const adminUsers = ["Dr. Arenzana", "Dr. Mayero"]; // Los admins (se registran a mano)
+        let xmlFile;
+        if (adminUsers.includes(user)) {
+            const allXmlFiles = ["juan.xml", "ana.xml","paco.xml"]; // Todos los XMLs (hay que añadirlos a mano)
+            let tablaDiv = document.getElementById("tabla");
+            allXmlFiles.forEach(function(file) {
+            let xml = loadXMLDoc(file);
+            let xsl = loadXMLDoc("Analisis_de_pacientes.xslt");
+            if (window.XSLTProcessor) {
+                let xsltProcessor = new XSLTProcessor();
+                xsltProcessor.importStylesheet(xsl);
+                let resultDocument = xsltProcessor.transformToFragment(xml, document);
+                let section = document.createElement("div");
+                section.appendChild(document.createElement("hr"));
+                section.appendChild(document.createTextNode("Resultados de: " + file));
+                section.appendChild(resultDocument);
+                tablaDiv.appendChild(section);
+            } else if (xml.transformNode) {
+                let ex = xml.transformNode(xsl);
+                let section = document.createElement("div");
+                section.innerHTML = "<hr>Resultados de: " + file + "<br>" + ex;
+                tablaDiv.appendChild(section);
+            }
+            });
+            // Detener la ejecución para evitar el procesamiento estándar
+            return;
+        } else {
+            // Usuario normal, solo su XML
+            xmlFile = user + ".xml";
+        }
+        const xslFile = "Analisis_de_pacientes.xslt";
+
+        let xml = loadXMLDoc(xmlFile);
+        let xsl = loadXMLDoc(xslFile);
+
+        if (window.XSLTProcessor) {
+            let xsltProcessor = new XSLTProcessor();
+            xsltProcessor.importStylesheet(xsl);
+            let resultDocument = xsltProcessor.transformToFragment(xml, document);
+            if (document.getElementById("tabla")) {
+                document.getElementById("tabla").appendChild(resultDocument);
+            }
+        } else if (xml.transformNode) {
+            let ex = xml.transformNode(xsl);
+            if (document.getElementById("tabla")) {
+                document.getElementById("tabla").innerHTML = ex;
+            }
+        }
+    }
+    </script>
+    <footer class="footer container" id="contacto">
+    <h3>VitaScan</h3>
+    <div class="links">
+        <ul>
+            <li><a href="#header-content">Inicio</a></li>
+            <li><a href="inversion.html">Información</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
